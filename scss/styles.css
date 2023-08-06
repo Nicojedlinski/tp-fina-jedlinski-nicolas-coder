@@ -23,8 +23,8 @@ header {
 .barraBusqueda {
   text-align: center;
   -webkit-text-size-adjust: 50px;
-     -moz-text-size-adjust: 50px;
-          text-size-adjust: 50px;
+  -moz-text-size-adjust: 50px;
+  text-size-adjust: 50px;
   list-style-type: none;
   text-transform: uppercase;
   font-family: "Noto Serif", serif;
@@ -118,7 +118,7 @@ form {
   }
   .descripcion {
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     font-family: "Noto Serif", serif;
   }
   .imagenesMiEquipo {
@@ -185,7 +185,7 @@ form {
 .imgMain1 p {
   display: flex;
   -moz-column-gap: 5px;
-       column-gap: 5px;
+  column-gap: 5px;
   width: 90%;
   text-align: center;
 }
@@ -193,7 +193,7 @@ form {
 .imgMain2 p {
   display: flex;
   -moz-column-gap: 5px;
-       column-gap: 5px;
+  column-gap: 5px;
   width: 90%;
   text-align: center;
 }
@@ -201,7 +201,7 @@ form {
 .imgMain3 p {
   display: flex;
   -moz-column-gap: 5px;
-       column-gap: 5px;
+  column-gap: 5px;
   width: 60%;
   text-align: center;
   margin: 4px;
@@ -211,7 +211,7 @@ form {
   width: 400px;
   display: flex;
   -moz-column-gap: 5px;
-       column-gap: 5px;
+  column-gap: 5px;
   width: 90%;
 }
 
@@ -219,7 +219,7 @@ form {
   width: 400px;
   display: flex;
   -moz-column-gap: 5px;
-       column-gap: 5px;
+  column-gap: 5px;
   width: 90%;
 }
 
@@ -227,7 +227,7 @@ form {
   width: 400px;
   display: flex;
   -moz-column-gap: 5px;
-       column-gap: 5px;
+  column-gap: 5px;
   width: 90%;
 }
 
@@ -386,4 +386,7 @@ form {
   text-align: center;
   height: 60px;
   font-size: 40px;
-}/*# sourceMappingURL=styles.css.map */
+}
+
+
+/*# sourceMappingURL=styles.css.map */
