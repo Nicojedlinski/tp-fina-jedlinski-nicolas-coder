@@ -2,6 +2,7 @@ let edad= 23
 //edad=30
 let nombre= " "
 
+let ingreso
 //let Bienvenido/a= prompt ("Welcome") 
 
 //alert ("Bienvenido" + "  " + usuario)
@@ -38,9 +39,17 @@ if(usuario= " "){
     //console.log("sos mayor. Podes adquirir los servicios");
 //}
 
-let num = parseFloat(prompt("ingresa tu edad"))
+let num = parseInt(prompt("ingresa tu edad"))
     let mayoredad=num >18;
     console.log(mayoredad);
+
+    if(isNaN(num)){
+    alert("el valor ingresado no es un numero")
+
+    while (num != "num"){
+        num= alert("el valor ingresado no es un numero")
+    }
+}
 
 if(mayoredad <=18){
     console.log("sos mayor. Podes adquirir los servicio");
@@ -58,13 +67,14 @@ if(si= "si"){
 
 
 alert("Pudiste responder todo?")
-alert("Si")
+alert("Next")
+alert("ya falta menos ...")
 
 for(let i=0; i<1; i++){
-    let pregunta=prompt(" ")
-    if (pregunta ="no"){
+    let pregunta=prompt("Respondio ?")
+    if (respuesta ="no"){
         respuesta="Responda Nuevamente el cuestionario"
-        alert(respuesta)
+        alert(pregunta)
     }else{
         respuesta= "Pronto se le enviaran las opciones disponibles a su casilla de corre. puede ser enviado a su spam"
         alert(respuesta)
