@@ -66,7 +66,7 @@ if(si= "si"){
 //alert ("Gracias Por tu respuesta, en breve se comunicaran con vos")
 
 
-alert("Pudiste responder todo?")
+alert("Respondiste todo")
 alert("Next")
 alert("ya falta menos ...")
 
@@ -81,4 +81,40 @@ for(let i=0; i<1; i++){
     }
 }
 
+let ingreso1= prompt('ingresa una opcion \n 1-volver al inicio \n 2- finalizar')
+
+switch (ingreso1){
+    case '1':
+        alert('seleccionaste volver al inicio')
+        break;
+    case '2':
+        alert('seleccionaste finalizar')
+        break;
+
+    default:
+        break;
+}
+
 alert ("En breve se comunicaran con vos. Atte el equipo Nico's")
+
+function saludar(){
+    console.log("Hola Nico");
+}
+
+for(let i=0; i<1; i++);{
+    saludar()
+}
+function saludopersonalizado(nombre){
+    console.log("hola" + nombre);
+}
+
+saludopersonalizado ("nombre")
+saludopersonalizado ("Pablo")
+saludopersonalizado ("Julieta")
+saludopersonalizado ("Roberto")
+
+for (let i=0; i<1; i++){
+    let ingreso1 = prompt ('ingresa tu usuario')
+
+    saludopersonalizado(usuario)
+}
