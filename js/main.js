@@ -148,6 +148,10 @@ this.formato = formato;
 this.duracion = duracion;
 this.precio = parseFloat(precio);
 this.stock = stock;
+//Metodo personalizado
+this.vender = function(cant) {
+    return this.precio * cant;
+};
 }
 
 const Contrato1= new Contrato ("Pack 1", "doce meses", 3000, 3)
@@ -158,9 +162,85 @@ console.log(Contrato1.duracion);
 console.log(Contrato1.precio);
 console.log(Contrato1.stock);
 
+const Contrato2 = new Contrato ("Pack 2", "cinco meses", 1200, 1)
+console.log(Contrato2);
+console.log(Contrato2.formato);
+console.log(Contrato2.duracion);
+console.log(Contrato2.precio);
+console.log(Contrato2.stock);
+
+console.log("El total de la venta del contrato"+ Contrato1.formato+ "por dos unidades es : $"+ Contrato1.vender(2));
+
 
 const mensaje= "Sr Nicolas"
 
 console.log(mensaje.length);
 console.log(mensaje.toLocaleUpperCase);
 console.log(mensaje.toLocaleLowerCase);
+
+console.log("formato" in Contrato1);
+for (const key in Contrato1) {
+    console.log(key);
+}
+
+//paquetes - uso de arrays
+const paquetes=["basico","premium","gold","busines"];
+console.log(paquetes);
+console.log(paquetes.length);
+
+for(const paquete of paquetes){
+    console.log(paquete);
+}
+
+// funciones del orden suoerior 
+function mayorQue (n) {
+    return (m) => m > n
+}
+
+let mayorQueDiezyOcho = mayorQue(18) // 18 el valor de n
+
+console.log(mayorQueDiezyOcho(18)); // true // 18 seria m
+console.log(mayorQueDiezyOcho(5)); // false // 5 seria m
+
+// asignando operador (op)
+function asignarOperador(op) {
+    if (op == "sumar"){
+        return(a, b) => a + b
+    }else if (op == "restar"){
+        return (a, b) => a - b
+    }else if (op == "multiplicar"){
+        return (a, b) => a* b
+    }
+}
+
+const suma = asignarOperador("sumar")
+const restar = asignarOperador ("restar")
+const multiplicar = asignarOperador ("multiplicar")
+
+console.log(); // aplicar la funcion
+
+const packElegir = [
+    {
+        id:1,
+        nombre: "premium",
+        precio: 4000,
+        temas: 'ayuda, muestarior de proyecto y mas',
+    },
+    {
+        id: 2,
+        nombre: "gold",
+        precio: 8900,
+        temas: 'pack mas requerido donde se aborda y muestra todo',
+    }
+] 
+packElegir.forEach((el)=>{
+    console.log(el.precio);
+})
+packElegir.forEach((el)=>{
+    console.log(el.nombre);
+})
+
+console.log("usted esta adquiriendo los siguientes productos");
+packElegir.forEach((el) => {
+    console.log(el.nombre + " - $" + el.precio)
+})
