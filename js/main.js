@@ -118,3 +118,49 @@ for (let i=0; i<1; i++){
 
     saludopersonalizado(usuario)
 }
+
+const contacto= {
+    nombre:"Pedro",
+    apellido:"Perez",
+    telefono:"1122425678",
+}
+
+console.table(contacto["nombre"]);
+console.table(contacto["apellido"]);
+console.table(contacto["telefono"]);
+
+const contacto1= {
+    nombre:"Lionel",
+    apellido:"Messi",
+    telefono:"1140506998",
+    direccion:"Calle falsa 321",
+}
+
+console.table(contacto1);
+
+contacto.direccion= 'av de los picantes 123'
+
+console.log(contacto.direccion);
+
+//Molde
+function Contrato (formato, duracion, precio, stock){
+this.formato = formato;
+this.duracion = duracion;
+this.precio = parseFloat(precio);
+this.stock = stock;
+}
+
+const Contrato1= new Contrato ("Pack 1", "doce meses", 3000, 3)
+
+console.log(Contrato1);
+console.log(Contrato1.formato);
+console.log(Contrato1.duracion);
+console.log(Contrato1.precio);
+console.log(Contrato1.stock);
+
+
+const mensaje= "Sr Nicolas"
+
+console.log(mensaje.length);
+console.log(mensaje.toLocaleUpperCase);
+console.log(mensaje.toLocaleLowerCase);
