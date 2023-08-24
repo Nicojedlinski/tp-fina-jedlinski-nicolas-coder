@@ -244,3 +244,31 @@ console.log("usted esta adquiriendo los siguientes productos");
 packElegir.forEach((el) => {
     console.log(el.nombre + " - $" + el.precio)
 })
+
+const nombresDirectorio= [
+    { id: 1, nombre: "Pedro Sanchez", edad: 24 },
+    { id: 2, nombre: "Raul Gimenez", edad: 24 },
+    { id: 3, nombre: "Marcos Esteban", edad: 44 },
+    { id: 4, nombre: "Pablo Enrique", edad: 15 },
+    { id: 5, nombre: "Lionel Messi", edad: 19},
+    { id: 6, nombre: "Mariela Cuccitini", edad: 66 },
+  ];
+
+
+//Funciones de orden superior
+//console.log(nombresDirectorio);
+nombresDirectorio.forEach((nombre) =>{
+console.log(nombre);
+});
+
+function buscarNombre(arr, titulo) {
+    return arr.find((el) => el.nombre.includes(titulo));
+}
+function fitrarPelicula(arr, titulo) {
+    return arr.filter((el) => el.nombre.includes(titulo));
+  }
+const encontrada = buscarnombre(nombresDirectorio, "a");
+const filtradas = fitrarnombre(nombresDirectorio, "la");
+
+console.log(encontrada);
+console.log(filtradas);
