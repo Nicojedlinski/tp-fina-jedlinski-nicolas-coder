@@ -388,5 +388,29 @@ form {
   font-size: 40px;
 }
 
+#contratarServicios{
+  text-align: center;
+  color: white;
+}
 
+.btn btn-search{
+  color: white;
+  text-decoration: none;
+}
+
+.btn btn-buscar{
+  color: white;
+}
+
+.btn btn-limpiar{
+  color: white;
+}
+
+.contactoColor{
+  color: white;
+}
+
+.login{
+  text-align: center;
+}
 /*# sourceMappingURL=styles.css.map */
