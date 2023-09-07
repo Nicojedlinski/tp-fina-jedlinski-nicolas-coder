@@ -13,7 +13,7 @@ let ingreso
 
 //edad=prompt("si o no ?")
 
-let usuario=prompt ("Ingresa tu Nombre");
+/*let usuario=prompt ("Ingresa tu Nombre");
 
 if(usuario= " "){
     console.log("no ingresaste tu usuario");
@@ -27,7 +27,7 @@ let legal= 18
 
 let mail=prompt ("Ingresa un mail");
 
-if(usuario= " "){
+/*if(usuario= " "){
     console.log("no ingresaste tu usuario");
 }else{
     console.log("Bienvenido/a"  + mail);
@@ -245,79 +245,17 @@ packElegir.forEach((el) => {
     console.log(el.nombre + " - $" + el.precio)
 })
 
-const nombresDirectorio= [
-    { id: 1, nombre: "Pedro Sanchez", edad: 24 },
-    { id: 2, nombre: "Raul Gimenez", edad: 24 },
-    { id: 3, nombre: "Marcos Esteban", edad: 44 },
-    { id: 4, nombre: "Pablo Enrique", edad: 15 },
-    { id: 5, nombre: "Lionel Messi", edad: 19},
-    { id: 6, nombre: "Mariela Cuccitini", edad: 66 },
-  ];
 
 
-//Funciones de orden superior
-//console.log(nombresDirectorio);
-nombresDirectorio.forEach((nombre) =>{
-console.log(nombre);
-});
 
-function buscarNombre(arr, titulo) {
-    return arr.find((el) => el.nombre.includes(titulo));
-}
-function fitrarPelicula(arr, titulo) {
-    return arr.filter((el) => el.nombre.includes(titulo));
-  }
-const encontrada = buscarnombre(nombresDirectorio, "a");
-const filtradas = fitrarnombre(nombresDirectorio, "la");
-
-console.log(encontrada);
-console.log(filtradas);
-
-
-//prueba clase dom
-
-const productos = [
-    { id: 1, nombre: "arroz integral", precio: 89 },
-    { id: 2, nombre: "papa", precio: 90 },
-    { id: 3, nombre: "tomate", precio: 204 },
-    { id: 4, nombre: "morrón", precio: 870 },
-    { id: 5, nombre: "pan", precio: 240 },
-    { id: 6, nombre: "fideos", precio: 124 },
-    { id: 7, nombre: "fideos", precio: 160 },
-    { id: 8, nombre: "arroz", precio: 500 },
-    { id: 8, nombre: "arroz", precio: 500 },
-    { id: 8, nombre: "arroz", precio: 500 },
-    { id: 8, nombre: "arroz", precio: 500 },
-  ];
-  const personas = [
-    "Matias",
-    "Pablo",
-    "Maria",
-    "Tobias",
-    "Marcia",
-    "Kevin",
-    "Karen",
-    "Federico",
-    "Carolina",
-    "Facundo",
-    "Camila",
-    "Stefi",
-    "Augusto",
-    "Jessica",
-    "Carla",
-    "Bautista",
-  ];
   
   /* Acceder a DOM  */
-  const titulo = document.getElementById("titulo");
+  const titulo = document.getElementById("pack");
   //console.log(titulo);
   
-  const tituloSec = document.getElementById("secundario");
+  const tituloSec = document.getElementById("precio");
   
   //console.log(tituloSec);
-  
-  const lista = document.getElementsByClassName("lista");
-  //console.log(lista);
   
   const paises = document.getElementsByClassName("pais");
   //console.log(paises[0]);
@@ -338,19 +276,9 @@ const productos = [
   }
   paises[5].innerText = "GERMANY";
   
-  //console.log(titulo.innerHTML="<span>HOLA</span>");
-  //console.log(tituloSec.innerHTML="HOLA TAROLA")
-  
-  titulo.className = "card";
-  
-  const parrafo = document.createElement("p");
-  parrafo.innerText = "Soy un parrafo creado en JS";
-  conten.appendChild(parrafo);
-  
   console.log(parrafo.innerText);
   parrafo.remove();
-  //lista[0].remove()
-  //document.body.append(parrafo)
+
   console.log(personas);
   
   personas.push("Gabriela", "Roxana");
@@ -364,11 +292,11 @@ const productos = [
   
   let product = {
     id: 1,
-    nombre: "Papas",
-    precio: 450,
+    nombre: "gold",
+    precio: 2000,
   };
   
-  let concatenacion =
+  let packElegir =
     "id: " +
     product.id +
     " Producto " +
@@ -378,7 +306,7 @@ const productos = [
   
   let plantilla = `id: ${product.id} Producto: ${product.nombre} precio $ ${product.precio}`;//interpolación
   console.log(plantilla);
-  console.log(concatenacion);
+  console.log(packElegir);
   
   const div2 = document.createElement("div");
   div2.innerHTML = `<div class="card">
@@ -386,4 +314,173 @@ const productos = [
   <p>Precio $ ${product.precio}</p>
   </div>`;
   
-  conten.appendChild(div2)
+  conten.appendChild(div2) 
+
+
+  const btnSearch = document.querySelector("#btnSearch"),
+  inputIngreso = document.querySelector("#ingreso");
+const contenedor = document.querySelector("#contenedor");
+
+//Funciones de búsqueda
+function buscarServicio(arr, filtro) {
+  const encontrado = arr.find((el) => {
+    return el.nombre.includes(filtro);
+  });
+  return encontrado;
+}
+function filtrarServicio(arr, filtro) {
+  const filtrado = arr.filter((el) => {
+    return el.nombre.includes(filtro);
+  });
+  return filtrado;
+}
+function crearHtml(arr) {
+  contenedor.innerHTML = "";
+  let html;
+  for (const el of arr) {
+    html = `<div class="card">
+                <img src=" ./img/${el.img}" alt="${el.nombre}">
+                <hr>
+                <h3>${el.nombre}</h3>
+                <p>Precio: $${el.precio} </p>
+                  <div class="card-action">
+                    <button class="btn btn-delete" id="${el.id}">Quitar</button>
+                  </div>
+              </div>`;
+    contenedor.innerHTML = contenedor.innerHTML + html;
+  }
+}
+
+btnSearch.addEventListener("click", (e) => {
+  const filtrados = filtrarServicio(servicios, inputIngreso.value);
+  crearHtml(filtrados);
+});
+//evento submit
+const formulario = document.querySelector("#form-login");
+formulario.addEventListener("submit", (e) => {
+  e.preventDefault();
+  console.log(e.target);
+  console.log(e.target[0].value);
+  console.log(e.target[1].value);
+  console.log("Formulario enviado");
+});
+
+//localStorage
+localStorage.setItem("saludo", "Hola tarola");
+localStorage.setItem("edad", 40);
+localStorage.setItem("numeros", [1, 2, 3, 4, 5, 6, 7]);
+localStorage.setItem("darkMode", true);
+
+const pack = localStorage.getItem("pack");
+const age = localStorage.getItem("age");
+const mododOscuro = localStorage.getItem("darkMode") == "true";
+const numerosGuardados = localStorage.getItem("numeros").split(",");
+/* console.log(saludo);
+console.log(edad);
+console.log(mododOscuro);
+console.log(numerosGuardados); */
+
+sessionStorage.setItem("visitante", true);
+
+const visitante = sessionStorage.getItem("visitante");
+/* console.log(visitante); */
+
+localStorage.removeItem("pack");
+//localStorage.clear()
+const user = { nickname: "Nico", pass: 12345678 };
+/* console.log(user.nickname); */
+const userJson = JSON.stringify(user);
+localStorage.setItem("user", userJson);
+
+const userDesdeStorage = JSON.parse(localStorage.getItem("user"));
+/* console.log(userDesdeStorage.nickname); */
+const carrito = [];
+
+carrito.push(servicios[0]);
+carrito.push(servicios[5]);
+localStorage.setItem("carrito", JSON.stringify(carrito));
+
+const btnMostrar = document.querySelector(".btn.btn-buscar");
+const btnLimpiar = document.querySelector(".btn.btn-limpiar");
+
+btnMostrar.addEventListener("click", () => {
+  const arrServ = JSON.parse(localStorage.getItem("carrito"));
+  console.log(arrServ);
+  crearHtml(arrServ);
+});
+btnLimpiar.addEventListener("click", () => {
+  localStorage.removeItem("carrito");
+});
+
+
+
+const packs = [
+    { id: 1, nombre: "pack premium", precio: 3000, },
+    { id: 2, nombre: "pack gold", precio: 2000,  },
+    { id: 3, nombre: "pack silver", precio: 1200, },
+];
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const pack = document.querySelectorAll(".pack");
+    const carrito = document.getElementById("carrito");
+
+    productos.forEach((pack) => {
+        const botonAgregar = pack.querySelector(".agregar");
+        botonAgregar.addEventListener("click", () => {
+            agregarAlCarrito(pack);
+        });
+    });
+
+    function agregarAlCarrito(pack) {
+        const nombreProducto = pack.querySelector("h2").textContent;
+        const precioProducto = parseFloat(producto.querySelector("p").textContent.replace("$", ""));
+        
+        const elementoCarrito = document.createElement("div");
+        elementoCarrito.classList.add("item-carrito");
+        elementoCarrito.innerHTML = `
+            <p>${nombreProducto} - $${precioProducto.toFixed(2)}</p>
+            <button class="eliminar">Eliminar</button>
+        `;
+
+        const botonEliminar = elementoCarrito.querySelector(".eliminar");
+        botonEliminar.addEventListener("click", () => {
+            elementoCarrito.remove();
+        });
+
+        carrito.appendChild(elementoCarrito);
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
